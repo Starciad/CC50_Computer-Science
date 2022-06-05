@@ -5,6 +5,4 @@
 
 Este repositório tem como objetivo apenas guardar atividades e exercícios que faço ao decorrer do curso.
 
-</br>
-
-## 👨‍💻​ Caso tenha interesse fique a vontade para usar esse repositorio.
+### 👨‍💻​ Caso tenha interesse fique a vontade para usar esse repositorio.
