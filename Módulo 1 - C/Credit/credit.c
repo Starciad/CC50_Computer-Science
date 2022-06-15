@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <cs50.h>
+#include <cs50.h>
 
 //4003600000000014
 //12345678912345678
