@@ -1,0 +1,8 @@
+sort1 uses: Bubble Sort
+How do you know?: Because in very long lists it took longer than the others, caused by the way it works to always see the loop every time, even the parts that have already been organized
+
+sort2 uses: Merge Sort
+How do you know?: Its time was short, thanks to recursion its ability to organize in large lists is superior to other forms
+
+sort3 uses: Selection Sort
+How do you know?: Its time was average, in a very large table there is a delay due to having to organize many elements at once at the beginning and decreasing with time.
