@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                let sections = document.getElementsByClassName("section");
+
+                let firstSection = sections[0];
+                let secondSection = sections[1];
+
+                let answerButtons = firstSection.getElementsByClassName("answer");
+                for(let i = 0; i < answerButtons.length; i++)
+                {
+                    let answerButton = answerButtons[i];
+                    if(answerButton.dataset.result == "correct")
+                    {
+                        answerButton.addEventListener("click", () => {
+                            answerButton.style.backgroundColor = "#00ff00";
+
+                            let tag = document.createElement("h3");
+                            tag.innerText = "Correto!";
+
+                            answerButton.appendChild(tag);
+                        });
+                    }
+
+                    if(answerButton.dataset.result == "incorrect")
+                    {
+                        answerButton.addEventListener("click", () => {
+                            answerButton.style.backgroundColor = "#ff0000";
+
+                            let tag = document.createElement("h3");
+                            tag.innerText = "Incorreto!";
+
+                            answerButton.appendChild(tag);
+                        });
+                    }
+                }
+
+                //===============================//
+
+                let textFeedback = secondSection.querySelector("#result");
+                let answerValue = secondSection.querySelector("#value");
+                let answerButton = secondSection.querySelector("#answer-button");
+
+                answerButton.addEventListener("click", () => {
+                    if(answerValue.value.toLowerCase() === "júpiter")
+                    {
+                        textFeedback.innerText = "Correto";
+                        answerValue.style.backgroundColor = "#00ff00";
+                    }
+                    else
+                    {
+                        textFeedback.innerText = "Incorreto";
+                        answerValue.style.backgroundColor = "#ff0000";
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                    <h3>Qual a montanha mais alta do mundo?</h3>
+
+                    <button data-result="correct" class="answer">Monte Everest</button>
+                    <button data-result="incorrect" class="answer">Mauna Kea</button>
+                    <button data-result="incorrect" class="answer">Dhaulagiri</button>
+                    <button data-result="incorrect" class="answer">Monte Chimborazo</button>
+                </hr>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                    <h3>Qual o maior planeta do sistema solar?</h3>
+                    <h3 id="result"></h3>
+
+                    <input id="value" type="text" placeholder="type planet name..."/>
+                    <button id="answer-button">Responder</button>
+                <!-- TODO: Add free response question here -->
+                </hr>
+            </div>
+
+        </div>
+    </body>
+</html>
